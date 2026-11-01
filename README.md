@@ -1,4 +1,4 @@
-# AkSion — Aksara Vision
+# AkSion (Aksara Vision)
 
 AkSion adalah aplikasi web untuk mengenali **20 aksara dasar Jawa (Carakan)** menggunakan model machine learning. Pengguna dapat menggambar aksara, mengunggah gambar, atau mengambil foto melalui kamera. Hasil menampilkan aksara yang diprediksi, bunyinya, skor keyakinan, dan hingga tiga kandidat teratas.
 
