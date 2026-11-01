@@ -10,7 +10,7 @@ AkSion adalah aplikasi web untuk mengenali **20 aksara dasar Jawa (Carakan)** me
 - **Model pemeriksa input:** `aksion_gatekeeper.keras`, untuk membantu menolak gambar yang bukan aksara.
 - **Pra-pemrosesan:** gambar didekode sebagai RGB, diubah ukurannya menjadi 66 × 66 piksel, dikonversi ke grayscale, lalu dinormalisasi ke rentang 0-1.
 - **Kelas yang dikenali:** `ba`, `ca`, `da`, `dha`, `ga`, `ha`, `ja`, `ka`, `la`, `ma`, `na`, `nga`, `nya`, `pa`, `ra`, `sa`, `ta`, `tha`, `wa`, dan `ya`.
-- **Batas input:** PNG, JPG/JPEG, atau WEBP; maksimal 5 MB per gambar dan 20 gambar per proses.
+- **Batas input:** PNG, JPG/JPEG, atau WEBP. Maksimal 5 MB per gambar dan 20 gambar per proses.
 - **Privasi dan jaringan:** server dijalankan pada `127.0.0.1:5000`, sehingga hanya dapat diakses dari komputer yang menjalankannya secara default.
 
 Model menggunakan ambang penolakan dari `config.json`. Input dapat ditolak sebagai bukan aksara atau sebagai tulisan yang kurang meyakinkan. Skor yang ditampilkan adalah probabilitas keluaran model, bukan jaminan bahwa prediksi benar. Nama kelas menunjukkan bunyi aksara, bukan arti kata.
@@ -58,7 +58,7 @@ Jika PowerShell mencegah aktivasi virtual environment, gunakan Python dari virtu
 .\.venv\Scripts\python.exe app.py
 ```
 
-Saat server berjalan, buka **http://127.0.0.1:5000** di browser. Model dimuat saat server mulai; tunggu proses pemuatan selesai sebelum mengirim gambar. Hentikan server dengan `Ctrl+C` di terminal.
+Saat server berjalan, buka **http://127.0.0.1:5000** di browser. Model dimuat saat server mulai, tunggu proses pemuatan selesai sebelum mengirim gambar. Hentikan server dengan `Ctrl+C` di terminal.
 
 ## Cara menggunakan
 
@@ -68,7 +68,7 @@ Saat server berjalan, buka **http://127.0.0.1:5000** di browser. Model dimuat sa
    - **Upload:** pilih atau seret hingga 20 gambar PNG, JPG/JPEG, atau WEBP. Setiap gambar maksimal 5 MB.
    - **Kamera (beta):** izinkan akses kamera, posisikan satu aksara di dalam bingkai, lalu ambil foto. Foto yang diambil dipotong menjadi persegi dari bagian tengah dan diubah ke 66 × 66 piksel. Maksimal 20 foto per proses.
 3. Tekan tombol prediksi pada metode yang dipilih.
-4. Baca hasil yang muncul. Prediksi yang diterima menampilkan aksara dan bunyinya; hasil juga dapat memuat kandidat lain. Jika gambar ditolak atau gagal diproses, periksa pesan yang ditampilkan dan coba gambar yang lebih jelas.
+4. Baca hasil yang muncul. Prediksi yang diterima menampilkan aksara dan bunyinya, hasil juga dapat memuat kandidat lain. Jika gambar ditolak atau gagal diproses, periksa pesan yang ditampilkan dan coba gambar yang lebih jelas.
 
 Untuk hasil yang lebih baik, gunakan satu aksara yang besar, jelas, berada di tengah, dan memiliki latar sederhana. Kamera umumnya memerlukan izin browser dan halaman pada konteks aman seperti `localhost` atau HTTPS. Aplikasi ini dijalankan di `localhost`.
 
