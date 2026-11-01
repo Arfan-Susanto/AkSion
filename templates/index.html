@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFF8F0">
+  <title>AkSion - Aksara Vision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=7) }}">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="wave wave-back" aria-hidden="true"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0,160 C180,240 300,70 480,135 C660,200 720,290 920,185 C1120,80 1250,100 1440,170 L1440,320 L0,320 Z" fill="#FFD166"/></svg></div>
+  <div class="wave wave-front" aria-hidden="true"><svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0,210 C180,125 340,280 520,200 C720,110 850,90 1030,180 C1200,265 1320,190 1440,140 L1440,320 L0,320 Z" fill="#FF9F43"/></svg></div>
+
+  <header class="nav">
+    <a class="brand" href="/" aria-label="AkSion beranda">
+      <span class="brand-icon">a<span>.</span></span>
+      <span class="brand-word">AkSion<small>AKSARA VISION</small></span>
+    </a>
+    <div class="nav-right"><span class="nav-pill"><i></i> CNN</span><a class="nav-link" href="#studio">Mulai eksplorasi <span>↘</span></a></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="spark">✳</span> DIGITAL CULTURE LAB <span class="eyebrow-line"></span></div>
+        <h1>Aksara Jawa,<br>kenalan <span class="orange-word">lebih dekat.</span></h1>
+        <p>Coret, upload, ambil gambar, dan biarkan AI bantu mengenali aksaranya. Belajar budaya bisa sekeren ini.</p>
+        <a class="hero-cta" href="#studio">Coba sekarang <span>↘</span></a>
+        <div class="hero-meta"><span class="tiny-dot"></span> 20 karakter · Satu ruang eksplorasi</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="float-card card-main"><span class="card-tag">AKSARA OF THE DAY</span><span class="big-glyph">ꦧ</span><span class="glyph-caption">ba · /ba/</span></div>
+        <div class="float-card card-small card-yellow"><span>ꦲ</span></div>
+        <div class="float-card card-small card-coral"><span>ꦤ</span></div>
+        <div class="float-card card-note"><span class="note-star">✳</span><span>warisan<br>masa depan</span></div>
+        <span class="decor decor-star">✳</span><span class="decor decor-plus">＋</span><span class="decor decor-dot"></span>
+      </div>
+      <div class="hero-bottom"><span>SCROLL TO PLAY</span><span class="scroll-line"></span><span> AKSARA LAB</span></div>
+    </section>
+
+    <section id="studio" class="studio-section">
+      <div class="section-heading">
+        <div><div class="eyebrow dark-eyebrow">YOUR CREATIVE PLAYGROUND</div><h2>Oke, giliran <span>kamu.</span></h2></div>
+        <p>Gambar sendiri, upload beberapa gambar, atau ambil langsung lewat kamera. Satu gambar = satu aksara.</p>
+      </div>
+
+      <div class="studio">
+        <aside class="studio-aside">
+          <div class="step-number"><span>INPUT MODE</span></div>
+          <h3>Pilih cara<br>berekspresi.</h3>
+          <p>Pilih gambar sendiri, upload foto, atau ambil langsung dari kamera perangkat.</p>
+          <div class="mode-switch" role="tablist" aria-label="Metode input" data-mode="draw">
+            <span class="mode-slider" aria-hidden="true"></span>
+            <button class="mode-tab active" id="drawTab" role="tab" aria-selected="true" aria-controls="drawPanel"><span>✳</span> Gambar</button>
+            <button class="mode-tab" id="uploadTab" role="tab" aria-selected="false" aria-controls="uploadPanel"><span>↥</span> Upload</button>
+            <button class="mode-tab" id="cameraTab" role="tab" aria-selected="false" aria-controls="cameraPanel"><span>◎</span> Kamera</button>
+          </div>
+          <div class="aside-tip"><span class="tip-icon">✦</span><p><strong>Tip kecil</strong><br>Gambar satu karakter dengan jelas di tengah frame agar hasilnya lebih optimal.</p></div>
+        </aside>
+
+        <div class="studio-main">
+          <div id="drawPanel" class="panel">
+            <div class="panel-top"><div><span class="step-number">CANVAS <span>· 66 × 66 PX</span></span><h3>Show me your stroke.</h3></div><button id="addCanvas" class="small-add" type="button">＋ Tambah kanvas</button></div>
+            <div class="brush-row"><span class="brush-label">ALAT GAMBAR</span>
+              <div class="brush-options" role="group" aria-label="Ketebalan brush">
+                <span class="brush-highlight" aria-hidden="true"></span>
+                <button class="brush-option" data-width="1" type="button"><span class="brush-preview brush-1"></span>1 px</button>
+                <button class="brush-option active" data-width="1.5" type="button"><span class="brush-preview brush-15"></span>1.5 px</button>
+                <button class="brush-option" data-width="2" type="button"><span class="brush-preview brush-2"></span>2 px</button>
+              </div>
+              <button id="eraserToggle" class="eraser-toggle" type="button" aria-pressed="false" aria-label="Aktifkan penghapus">⌫ Penghapus</button>
+              <span id="canvasCount" class="count-pill">1 kanvas</span>
+            </div>
+            <div id="canvasGrid" class="canvas-grid"></div>
+            <div class="action-row"><button id="clearAllCanvases" class="btn-quiet" type="button"><svg aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="M3 4.5h10M6 4.5v-2h4v2m-5.5 0 .6 9h5.8l.6-9M6.5 7v4m3-4v4"/></svg><span>Hapus semua</span></button><button id="predictDrawing" class="btn-primary" type="button">Kenali aksaraku <span>↗</span></button></div>
+          </div>
+
+          <div id="uploadPanel" class="panel hidden">
+            <div class="panel-top"><div><span class="step-number">UPLOAD <span>· BATCH MODE</span></span><h3>Drop your gallery.</h3></div><span class="count-pill">Maks. 20 file</span></div>
+            <div id="dropZone" class="drop-zone" tabindex="0" role="button" aria-label="Pilih atau seret gambar">
+              <div class="upload-emoji">↥</div><strong>Tarik file ke sini</strong><span>atau klik untuk pilih beberapa gambar sekaligus</span><small>PNG · JPG · WEBP · maksimal 5 MB per gambar</small>
+              <div class="upload-actions compact-actions">
+                <button id="fileTrigger" class="action-chip action-chip--secondary" type="button">Pilih gambar</button>
+              </div>
+            </div>
+            <input id="imageInput" type="file" accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp,image/*" multiple hidden>
+            <div id="uploadQueue" class="upload-queue"></div>
+            <div class="action-row"><button id="clearUploads" class="btn-quiet" type="button">Kosongkan</button><button id="predictUpload" class="btn-primary" type="button" disabled>Prediksi semua <span>↗</span></button></div>
+          </div>
+          <div id="cameraPanel" class="panel hidden">
+            <div class="panel-top"><div><span class="step-number">KAMERA (BETA) <span>· LIVE CAPTURE</span></span><h3>Arahkan ke aksara.</h3></div><span id="cameraCount" class="count-pill">0 foto</span></div>
+            <div class="camera-view">
+              <video id="cameraVideo" autoplay playsinline muted aria-label="Preview kamera"></video>
+              <div class="camera-guide" aria-hidden="true"></div>
+              <div id="cameraPlaceholder" class="camera-placeholder"><span>◎</span><strong>Kamera belum aktif</strong><small>Tekan tombol “Aktifkan kamera” untuk mulai.</small></div>
+            </div>
+            <div class="camera-actions">
+              <button id="startCamera" class="action-chip action-chip--secondary" type="button">Aktifkan kamera</button>
+              <button id="captureCamera" class="action-chip action-chip--primary" type="button" disabled>Ambil foto</button>
+            </div>
+            <p class="camera-hint">Posisikan satu aksara di dalam bingkai. Maksimal 20 foto, disimpan pada ukuran 66 × 66 px.</p>
+            <div id="cameraQueue" class="upload-queue"></div>
+            <div class="action-row"><button id="clearCamera" class="btn-quiet" type="button">Hapus foto</button><button id="predictCamera" class="btn-primary" type="button" disabled>Kenali hasil foto <span>↗</span></button></div>
+          </div>
+          <div id="status" class="status hidden" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <section id="resultsSection" class="results-section hidden" role="dialog" aria-modal="true" aria-labelledby="resultsTitle" tabindex="-1">
+        <div class="results-dialog">
+          <div class="results-heading"><div><div class="eyebrow dark-eyebrow">THE AI SAID...</div><h2 id="resultsTitle">Ini hasil <span>bacanya.</span></h2></div><div class="results-controls"><span id="resultCount" class="count-pill">0 hasil</span><button id="closeResults" class="close-results" type="button" aria-label="Tutup hasil">×</button></div></div>
+          <div id="resultsGrid" class="results-grid" aria-live="polite"></div>
+          <p class="result-footnote">Probabilitas adalah skor keluaran model, bukan jaminan kebenaran. Nama kelas seperti “ba” menunjukkan bunyi aksara, bukan arti sebuah kata.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="bottom-banner"><div class="banner-glyph" aria-hidden="true">ꦲ ꦤ ꦕ</div><div><div class="eyebrow">CULTURE MEETS CODE</div><h2>Tradisi punya masa depan.</h2><p>Mulai dari satu goresan, kenali 20 aksara dasar.</p></div><a href="#studio" class="banner-link">Cobain <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-icon">a<span>.</span></span><span class="brand-word">AkSion<small>AKSARA VISION</small></span></a><span>Made to keep culture in motion ✳</span></footer>
+  <script src="{{ url_for('static', filename='script.js', v=8) }}"></script>
+</body>
+</html>
